@@ -1,0 +1,13 @@
+prefix=/media/kwierman/KJWPassport/newhdf5/localProducts_kevlar_v01_00_00_e10_debug/zlib/v01_02_11/u16.x86_64.e10.debug/
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+sharedlibdir=${libdir}
+includedir=${prefix}/include
+
+Name: zlib
+Description: zlib compression library
+Version: 1.2.11
+
+Requires:
+Libs: -L${libdir} -L${sharedlibdir} -lz
+Cflags: -I${includedir}

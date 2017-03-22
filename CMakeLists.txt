@@ -44,7 +44,7 @@ find_ups_product( cetbuildtools v4_14_01 )
 
 # macros for dictionary and simple_plugin
 # ADD SOURCE CODE SUBDIRECTORIES HERE
-
+add_subdirectory(zlib)
 
 
 # tests

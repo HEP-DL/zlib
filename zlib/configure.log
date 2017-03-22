@@ -1,0 +1,1008 @@
+--------------------
+./configure --prefix=/media/kwierman/KJWPassport/newhdf5/localProducts_kevlar_v01_00_00_e10_debug/zlib/v01_02_11/u16.x86_64.e10.debug/
+Tue Mar 21 18:35:24 CDT 2017
+=== ztest14046.c ===
+extern int getchar();
+int hello() {return getchar();}
+===
+gcc -c ztest14046.c
+... using gcc
+
+Checking for obsessive-compulsive compiler options...
+=== ztest14046.c ===
+int foo() { return 0; }
+===
+gcc -c -O3 ztest14046.c
+
+Checking for shared library support...
+=== ztest14046.c ===
+extern int getchar();
+int hello() {return getchar();}
+===
+gcc -w -c -O3 -fPIC ztest14046.c
+gcc -shared -Wl,-soname,libz.so.1,--version-script,zlib.map -O3 -fPIC -o ztest14046.so ztest14046.o
+Building shared library libz.so.1.2.11 with gcc.
+
+=== ztest14046.c ===
+#include <stdio.h>
+#include <stdlib.h>
+size_t dummy = 0;
+===
+gcc -c -O3 ztest14046.c
+Checking for size_t... Yes.
+
+
+=== ztest14046.c ===
+#include <sys/types.h>
+off64_t dummy = 0;
+===
+gcc -c -O3 -D_LARGEFILE64_SOURCE=1 ztest14046.c
+Checking for off64_t... Yes.
+Checking for fseeko... Yes.
+
+=== ztest14046.c ===
+#include <string.h>
+#include <errno.h>
+int main() { return strlen(strerror(errno)); }
+===
+gcc -O3 -D_LARGEFILE64_SOURCE=1 -o ztest14046 ztest14046.c
+Checking for strerror... Yes.
+
+=== ztest14046.c ===
+#include <unistd.h>
+int main() { return 0; }
+===
+gcc -c -O3 -D_LARGEFILE64_SOURCE=1 ztest14046.c
+Checking for unistd.h... Yes.
+
+=== ztest14046.c ===
+#include <stdarg.h>
+int main() { return 0; }
+===
+gcc -c -O3 -D_LARGEFILE64_SOURCE=1 ztest14046.c
+Checking for stdarg.h... Yes.
+
+=== ztest14046.c ===
+#include <stdio.h>
+#include <stdarg.h>
+#include "zconf.h"
+int main()
+{
+#ifndef STDC
+  choke me
+#endif
+  return 0;
+}
+===
+gcc -c -O3 -D_LARGEFILE64_SOURCE=1 ztest14046.c
+Checking whether to use vs[n]printf() or s[n]printf()... using vs[n]printf().
+
+=== ztest14046.c ===
+#include <stdio.h>
+#include <stdarg.h>
+int mytest(const char *fmt, ...)
+{
+  char buf[20];
+  va_list ap;
+  va_start(ap, fmt);
+  vsnprintf(buf, sizeof(buf), fmt, ap);
+  va_end(ap);
+  return 0;
+}
+int main()
+{
+  return (mytest("Hello%d\n", 1));
+}
+===
+gcc -O3 -D_LARGEFILE64_SOURCE=1 -o ztest14046 ztest14046.c
+Checking for vsnprintf() in stdio.h... Yes.
+
+=== ztest14046.c ===
+#include <stdio.h>
+#include <stdarg.h>
+int mytest(const char *fmt, ...)
+{
+  int n;
+  char buf[20];
+  va_list ap;
+  va_start(ap, fmt);
+  n = vsnprintf(buf, sizeof(buf), fmt, ap);
+  va_end(ap);
+  return n;
+}
+int main()
+{
+  return (mytest("Hello%d\n", 1));
+}
+===
+gcc -c -O3 -D_LARGEFILE64_SOURCE=1 ztest14046.c
+Checking for return value of vsnprintf()... Yes.
+
+=== ztest14046.c ===
+#define ZLIB_INTERNAL __attribute__((visibility ("hidden")))
+int ZLIB_INTERNAL foo;
+int main()
+{
+  return 0;
+}
+===
+gcc -c -O3 -D_LARGEFILE64_SOURCE=1 ztest14046.c
+Checking for attribute(visibility) support... Yes.
+
+ALL = static shared all64
+AR = ar
+ARFLAGS = rc
+CC = gcc
+CFLAGS = -O3 -D_LARGEFILE64_SOURCE=1 -DHAVE_HIDDEN
+CPP = gcc -E
+EXE =
+LDCONFIG = ldconfig
+LDFLAGS =
+LDSHARED = gcc -shared -Wl,-soname,libz.so.1,--version-script,zlib.map
+LDSHAREDLIBC = -lc
+OBJC = $(OBJZ) $(OBJG)
+PIC_OBJC = $(PIC_OBJZ) $(PIC_OBJG)
+RANLIB = ranlib
+SFLAGS = -O3 -fPIC -D_LARGEFILE64_SOURCE=1 -DHAVE_HIDDEN
+SHAREDLIB = libz.so
+SHAREDLIBM = libz.so.1
+SHAREDLIBV = libz.so.1.2.11
+STATICLIB = libz.a
+TEST = all teststatic testshared test64
+VER = 1.2.11
+Z_U4 =
+SRCDIR =
+exec_prefix = ${prefix}
+includedir = ${prefix}/include
+libdir = ${exec_prefix}/lib
+mandir = ${prefix}/share/man
+prefix = /media/kwierman/KJWPassport/newhdf5/localProducts_kevlar_v01_00_00_e10_debug/zlib/v01_02_11/u16.x86_64.e10.debug/
+sharedlibdir = ${libdir}
+uname = Linux
+--------------------
+
+
+--------------------
+./configure --prefix=/media/kwierman/KJWPassport/newhdf5/localProducts_kevlar_v01_00_00_e10_debug/zlib/v01_02_11/u16.x86_64.e10.debug/
+Tue Mar 21 18:36:41 CDT 2017
+=== ztest14649.c ===
+extern int getchar();
+int hello() {return getchar();}
+===
+gcc -c ztest14649.c
+... using gcc
+
+Checking for obsessive-compulsive compiler options...
+=== ztest14649.c ===
+int foo() { return 0; }
+===
+gcc -c -O3 ztest14649.c
+
+Checking for shared library support...
+=== ztest14649.c ===
+extern int getchar();
+int hello() {return getchar();}
+===
+gcc -w -c -O3 -fPIC ztest14649.c
+gcc -shared -Wl,-soname,libz.so.1,--version-script,zlib.map -O3 -fPIC -o ztest14649.so ztest14649.o
+Building shared library libz.so.1.2.11 with gcc.
+
+=== ztest14649.c ===
+#include <stdio.h>
+#include <stdlib.h>
+size_t dummy = 0;
+===
+gcc -c -O3 ztest14649.c
+Checking for size_t... Yes.
+
+
+=== ztest14649.c ===
+#include <sys/types.h>
+off64_t dummy = 0;
+===
+gcc -c -O3 -D_LARGEFILE64_SOURCE=1 ztest14649.c
+Checking for off64_t... Yes.
+Checking for fseeko... Yes.
+
+=== ztest14649.c ===
+#include <string.h>
+#include <errno.h>
+int main() { return strlen(strerror(errno)); }
+===
+gcc -O3 -D_LARGEFILE64_SOURCE=1 -o ztest14649 ztest14649.c
+Checking for strerror... Yes.
+
+=== ztest14649.c ===
+#include <unistd.h>
+int main() { return 0; }
+===
+gcc -c -O3 -D_LARGEFILE64_SOURCE=1 ztest14649.c
+Checking for unistd.h... Yes.
+
+=== ztest14649.c ===
+#include <stdarg.h>
+int main() { return 0; }
+===
+gcc -c -O3 -D_LARGEFILE64_SOURCE=1 ztest14649.c
+Checking for stdarg.h... Yes.
+
+=== ztest14649.c ===
+#include <stdio.h>
+#include <stdarg.h>
+#include "zconf.h"
+int main()
+{
+#ifndef STDC
+  choke me
+#endif
+  return 0;
+}
+===
+gcc -c -O3 -D_LARGEFILE64_SOURCE=1 ztest14649.c
+Checking whether to use vs[n]printf() or s[n]printf()... using vs[n]printf().
+
+=== ztest14649.c ===
+#include <stdio.h>
+#include <stdarg.h>
+int mytest(const char *fmt, ...)
+{
+  char buf[20];
+  va_list ap;
+  va_start(ap, fmt);
+  vsnprintf(buf, sizeof(buf), fmt, ap);
+  va_end(ap);
+  return 0;
+}
+int main()
+{
+  return (mytest("Hello%d\n", 1));
+}
+===
+gcc -O3 -D_LARGEFILE64_SOURCE=1 -o ztest14649 ztest14649.c
+Checking for vsnprintf() in stdio.h... Yes.
+
+=== ztest14649.c ===
+#include <stdio.h>
+#include <stdarg.h>
+int mytest(const char *fmt, ...)
+{
+  int n;
+  char buf[20];
+  va_list ap;
+  va_start(ap, fmt);
+  n = vsnprintf(buf, sizeof(buf), fmt, ap);
+  va_end(ap);
+  return n;
+}
+int main()
+{
+  return (mytest("Hello%d\n", 1));
+}
+===
+gcc -c -O3 -D_LARGEFILE64_SOURCE=1 ztest14649.c
+Checking for return value of vsnprintf()... Yes.
+
+=== ztest14649.c ===
+#define ZLIB_INTERNAL __attribute__((visibility ("hidden")))
+int ZLIB_INTERNAL foo;
+int main()
+{
+  return 0;
+}
+===
+gcc -c -O3 -D_LARGEFILE64_SOURCE=1 ztest14649.c
+Checking for attribute(visibility) support... Yes.
+
+ALL = static shared all64
+AR = ar
+ARFLAGS = rc
+CC = gcc
+CFLAGS = -O3 -D_LARGEFILE64_SOURCE=1 -DHAVE_HIDDEN
+CPP = gcc -E
+EXE =
+LDCONFIG = ldconfig
+LDFLAGS =
+LDSHARED = gcc -shared -Wl,-soname,libz.so.1,--version-script,zlib.map
+LDSHAREDLIBC = -lc
+OBJC = $(OBJZ) $(OBJG)
+PIC_OBJC = $(PIC_OBJZ) $(PIC_OBJG)
+RANLIB = ranlib
+SFLAGS = -O3 -fPIC -D_LARGEFILE64_SOURCE=1 -DHAVE_HIDDEN
+SHAREDLIB = libz.so
+SHAREDLIBM = libz.so.1
+SHAREDLIBV = libz.so.1.2.11
+STATICLIB = libz.a
+TEST = all teststatic testshared test64
+VER = 1.2.11
+Z_U4 =
+SRCDIR =
+exec_prefix = ${prefix}
+includedir = ${prefix}/include
+libdir = ${exec_prefix}/lib
+mandir = ${prefix}/share/man
+prefix = /media/kwierman/KJWPassport/newhdf5/localProducts_kevlar_v01_00_00_e10_debug/zlib/v01_02_11/u16.x86_64.e10.debug/
+sharedlibdir = ${libdir}
+uname = Linux
+--------------------
+
+
+--------------------
+./configure --prefix=/media/kwierman/KJWPassport/newhdf5/localProducts_kevlar_v01_00_00_e10_debug/zlib/v01_02_11/u16.x86_64.e10.debug/
+Tue Mar 21 18:40:06 CDT 2017
+=== ztest15834.c ===
+extern int getchar();
+int hello() {return getchar();}
+===
+/media/kwierman/KJWPassport/products/gcc/v4_9_3a/Linux64bit+4.4-2.23/bin/gcc -c ztest15834.c
+... using gcc
+
+Checking for obsessive-compulsive compiler options...
+=== ztest15834.c ===
+int foo() { return 0; }
+===
+/media/kwierman/KJWPassport/products/gcc/v4_9_3a/Linux64bit+4.4-2.23/bin/gcc -c -O3 ztest15834.c
+
+Checking for shared library support...
+=== ztest15834.c ===
+extern int getchar();
+int hello() {return getchar();}
+===
+/media/kwierman/KJWPassport/products/gcc/v4_9_3a/Linux64bit+4.4-2.23/bin/gcc -w -c -O3 -fPIC ztest15834.c
+/media/kwierman/KJWPassport/products/gcc/v4_9_3a/Linux64bit+4.4-2.23/bin/gcc -shared -Wl,-soname,libz.so.1,--version-script,zlib.map -O3 -fPIC -o ztest15834.so ztest15834.o
+Building shared library libz.so.1.2.11 with /media/kwierman/KJWPassport/products/gcc/v4_9_3a/Linux64bit+4.4-2.23/bin/gcc.
+
+=== ztest15834.c ===
+#include <stdio.h>
+#include <stdlib.h>
+size_t dummy = 0;
+===
+/media/kwierman/KJWPassport/products/gcc/v4_9_3a/Linux64bit+4.4-2.23/bin/gcc -c -O3 ztest15834.c
+Checking for size_t... Yes.
+
+
+=== ztest15834.c ===
+#include <sys/types.h>
+off64_t dummy = 0;
+===
+/media/kwierman/KJWPassport/products/gcc/v4_9_3a/Linux64bit+4.4-2.23/bin/gcc -c -O3 -D_LARGEFILE64_SOURCE=1 ztest15834.c
+Checking for off64_t... Yes.
+Checking for fseeko... Yes.
+
+=== ztest15834.c ===
+#include <string.h>
+#include <errno.h>
+int main() { return strlen(strerror(errno)); }
+===
+/media/kwierman/KJWPassport/products/gcc/v4_9_3a/Linux64bit+4.4-2.23/bin/gcc -O3 -D_LARGEFILE64_SOURCE=1 -o ztest15834 ztest15834.c
+Checking for strerror... Yes.
+
+=== ztest15834.c ===
+#include <unistd.h>
+int main() { return 0; }
+===
+/media/kwierman/KJWPassport/products/gcc/v4_9_3a/Linux64bit+4.4-2.23/bin/gcc -c -O3 -D_LARGEFILE64_SOURCE=1 ztest15834.c
+Checking for unistd.h... Yes.
+
+=== ztest15834.c ===
+#include <stdarg.h>
+int main() { return 0; }
+===
+/media/kwierman/KJWPassport/products/gcc/v4_9_3a/Linux64bit+4.4-2.23/bin/gcc -c -O3 -D_LARGEFILE64_SOURCE=1 ztest15834.c
+Checking for stdarg.h... Yes.
+
+=== ztest15834.c ===
+#include <stdio.h>
+#include <stdarg.h>
+#include "zconf.h"
+int main()
+{
+#ifndef STDC
+  choke me
+#endif
+  return 0;
+}
+===
+/media/kwierman/KJWPassport/products/gcc/v4_9_3a/Linux64bit+4.4-2.23/bin/gcc -c -O3 -D_LARGEFILE64_SOURCE=1 ztest15834.c
+Checking whether to use vs[n]printf() or s[n]printf()... using vs[n]printf().
+
+=== ztest15834.c ===
+#include <stdio.h>
+#include <stdarg.h>
+int mytest(const char *fmt, ...)
+{
+  char buf[20];
+  va_list ap;
+  va_start(ap, fmt);
+  vsnprintf(buf, sizeof(buf), fmt, ap);
+  va_end(ap);
+  return 0;
+}
+int main()
+{
+  return (mytest("Hello%d\n", 1));
+}
+===
+/media/kwierman/KJWPassport/products/gcc/v4_9_3a/Linux64bit+4.4-2.23/bin/gcc -O3 -D_LARGEFILE64_SOURCE=1 -o ztest15834 ztest15834.c
+Checking for vsnprintf() in stdio.h... Yes.
+
+=== ztest15834.c ===
+#include <stdio.h>
+#include <stdarg.h>
+int mytest(const char *fmt, ...)
+{
+  int n;
+  char buf[20];
+  va_list ap;
+  va_start(ap, fmt);
+  n = vsnprintf(buf, sizeof(buf), fmt, ap);
+  va_end(ap);
+  return n;
+}
+int main()
+{
+  return (mytest("Hello%d\n", 1));
+}
+===
+/media/kwierman/KJWPassport/products/gcc/v4_9_3a/Linux64bit+4.4-2.23/bin/gcc -c -O3 -D_LARGEFILE64_SOURCE=1 ztest15834.c
+Checking for return value of vsnprintf()... Yes.
+
+=== ztest15834.c ===
+#define ZLIB_INTERNAL __attribute__((visibility ("hidden")))
+int ZLIB_INTERNAL foo;
+int main()
+{
+  return 0;
+}
+===
+/media/kwierman/KJWPassport/products/gcc/v4_9_3a/Linux64bit+4.4-2.23/bin/gcc -c -O3 -D_LARGEFILE64_SOURCE=1 ztest15834.c
+Checking for attribute(visibility) support... Yes.
+
+ALL = static shared all64
+AR = ar
+ARFLAGS = rc
+CC = /media/kwierman/KJWPassport/products/gcc/v4_9_3a/Linux64bit+4.4-2.23/bin/gcc
+CFLAGS = -O3 -D_LARGEFILE64_SOURCE=1 -DHAVE_HIDDEN
+CPP = /media/kwierman/KJWPassport/products/gcc/v4_9_3a/Linux64bit+4.4-2.23/bin/gcc -E
+EXE =
+LDCONFIG = ldconfig
+LDFLAGS =
+LDSHARED = /media/kwierman/KJWPassport/products/gcc/v4_9_3a/Linux64bit+4.4-2.23/bin/gcc -shared -Wl,-soname,libz.so.1,--version-script,zlib.map
+LDSHAREDLIBC = -lc
+OBJC = $(OBJZ) $(OBJG)
+PIC_OBJC = $(PIC_OBJZ) $(PIC_OBJG)
+RANLIB = ranlib
+SFLAGS = -O3 -fPIC -D_LARGEFILE64_SOURCE=1 -DHAVE_HIDDEN
+SHAREDLIB = libz.so
+SHAREDLIBM = libz.so.1
+SHAREDLIBV = libz.so.1.2.11
+STATICLIB = libz.a
+TEST = all teststatic testshared test64
+VER = 1.2.11
+Z_U4 =
+SRCDIR =
+exec_prefix = ${prefix}
+includedir = ${prefix}/include
+libdir = ${exec_prefix}/lib
+mandir = ${prefix}/share/man
+prefix = /media/kwierman/KJWPassport/newhdf5/localProducts_kevlar_v01_00_00_e10_debug/zlib/v01_02_11/u16.x86_64.e10.debug/
+sharedlibdir = ${libdir}
+uname = Linux
+--------------------
+
+
+--------------------
+./configure --prefix=/media/kwierman/KJWPassport/newhdf5/localProducts_kevlar_v01_00_00_e10_debug/zlib/v01_02_11/u16.x86_64.e10.debug/
+Tue Mar 21 18:40:54 CDT 2017
+=== ztest16531.c ===
+extern int getchar();
+int hello() {return getchar();}
+===
+gcc -c ztest16531.c
+... using gcc
+
+Checking for obsessive-compulsive compiler options...
+=== ztest16531.c ===
+int foo() { return 0; }
+===
+gcc -c -O3 ztest16531.c
+
+Checking for shared library support...
+=== ztest16531.c ===
+extern int getchar();
+int hello() {return getchar();}
+===
+gcc -w -c -O3 -fPIC ztest16531.c
+gcc -shared -Wl,-soname,libz.so.1,--version-script,zlib.map -O3 -fPIC -o ztest16531.so ztest16531.o
+Building shared library libz.so.1.2.11 with gcc.
+
+=== ztest16531.c ===
+#include <stdio.h>
+#include <stdlib.h>
+size_t dummy = 0;
+===
+gcc -c -O3 ztest16531.c
+Checking for size_t... Yes.
+
+
+=== ztest16531.c ===
+#include <sys/types.h>
+off64_t dummy = 0;
+===
+gcc -c -O3 -D_LARGEFILE64_SOURCE=1 ztest16531.c
+Checking for off64_t... Yes.
+Checking for fseeko... Yes.
+
+=== ztest16531.c ===
+#include <string.h>
+#include <errno.h>
+int main() { return strlen(strerror(errno)); }
+===
+gcc -O3 -D_LARGEFILE64_SOURCE=1 -o ztest16531 ztest16531.c
+Checking for strerror... Yes.
+
+=== ztest16531.c ===
+#include <unistd.h>
+int main() { return 0; }
+===
+gcc -c -O3 -D_LARGEFILE64_SOURCE=1 ztest16531.c
+Checking for unistd.h... Yes.
+
+=== ztest16531.c ===
+#include <stdarg.h>
+int main() { return 0; }
+===
+gcc -c -O3 -D_LARGEFILE64_SOURCE=1 ztest16531.c
+Checking for stdarg.h... Yes.
+
+=== ztest16531.c ===
+#include <stdio.h>
+#include <stdarg.h>
+#include "zconf.h"
+int main()
+{
+#ifndef STDC
+  choke me
+#endif
+  return 0;
+}
+===
+gcc -c -O3 -D_LARGEFILE64_SOURCE=1 ztest16531.c
+Checking whether to use vs[n]printf() or s[n]printf()... using vs[n]printf().
+
+=== ztest16531.c ===
+#include <stdio.h>
+#include <stdarg.h>
+int mytest(const char *fmt, ...)
+{
+  char buf[20];
+  va_list ap;
+  va_start(ap, fmt);
+  vsnprintf(buf, sizeof(buf), fmt, ap);
+  va_end(ap);
+  return 0;
+}
+int main()
+{
+  return (mytest("Hello%d\n", 1));
+}
+===
+gcc -O3 -D_LARGEFILE64_SOURCE=1 -o ztest16531 ztest16531.c
+Checking for vsnprintf() in stdio.h... Yes.
+
+=== ztest16531.c ===
+#include <stdio.h>
+#include <stdarg.h>
+int mytest(const char *fmt, ...)
+{
+  int n;
+  char buf[20];
+  va_list ap;
+  va_start(ap, fmt);
+  n = vsnprintf(buf, sizeof(buf), fmt, ap);
+  va_end(ap);
+  return n;
+}
+int main()
+{
+  return (mytest("Hello%d\n", 1));
+}
+===
+gcc -c -O3 -D_LARGEFILE64_SOURCE=1 ztest16531.c
+Checking for return value of vsnprintf()... Yes.
+
+=== ztest16531.c ===
+#define ZLIB_INTERNAL __attribute__((visibility ("hidden")))
+int ZLIB_INTERNAL foo;
+int main()
+{
+  return 0;
+}
+===
+gcc -c -O3 -D_LARGEFILE64_SOURCE=1 ztest16531.c
+Checking for attribute(visibility) support... Yes.
+
+ALL = static shared all64
+AR = ar
+ARFLAGS = rc
+CC = gcc
+CFLAGS = -O3 -D_LARGEFILE64_SOURCE=1 -DHAVE_HIDDEN
+CPP = gcc -E
+EXE =
+LDCONFIG = ldconfig
+LDFLAGS =
+LDSHARED = gcc -shared -Wl,-soname,libz.so.1,--version-script,zlib.map
+LDSHAREDLIBC = -lc
+OBJC = $(OBJZ) $(OBJG)
+PIC_OBJC = $(PIC_OBJZ) $(PIC_OBJG)
+RANLIB = ranlib
+SFLAGS = -O3 -fPIC -D_LARGEFILE64_SOURCE=1 -DHAVE_HIDDEN
+SHAREDLIB = libz.so
+SHAREDLIBM = libz.so.1
+SHAREDLIBV = libz.so.1.2.11
+STATICLIB = libz.a
+TEST = all teststatic testshared test64
+VER = 1.2.11
+Z_U4 =
+SRCDIR =
+exec_prefix = ${prefix}
+includedir = ${prefix}/include
+libdir = ${exec_prefix}/lib
+mandir = ${prefix}/share/man
+prefix = /media/kwierman/KJWPassport/newhdf5/localProducts_kevlar_v01_00_00_e10_debug/zlib/v01_02_11/u16.x86_64.e10.debug/
+sharedlibdir = ${libdir}
+uname = Linux
+--------------------
+
+
+--------------------
+./configure --prefix=/media/kwierman/KJWPassport/newhdf5/localProducts_kevlar_v01_00_00_e10_debug/zlib/v01_02_11/u16.x86_64.e10.debug/
+Tue Mar 21 18:42:11 CDT 2017
+=== ztest20920.c ===
+extern int getchar();
+int hello() {return getchar();}
+===
+/media/kwierman/KJWPassport/products/gcc/v4_9_3a/Linux64bit+4.4-2.23/bin/gcc -c ztest20920.c
+... using gcc
+
+Checking for obsessive-compulsive compiler options...
+=== ztest20920.c ===
+int foo() { return 0; }
+===
+/media/kwierman/KJWPassport/products/gcc/v4_9_3a/Linux64bit+4.4-2.23/bin/gcc -c -O3 ztest20920.c
+
+Checking for shared library support...
+=== ztest20920.c ===
+extern int getchar();
+int hello() {return getchar();}
+===
+/media/kwierman/KJWPassport/products/gcc/v4_9_3a/Linux64bit+4.4-2.23/bin/gcc -w -c -O3 -fPIC ztest20920.c
+/media/kwierman/KJWPassport/products/gcc/v4_9_3a/Linux64bit+4.4-2.23/bin/gcc -shared -Wl,-soname,libz.so.1,--version-script,zlib.map -O3 -fPIC -o ztest20920.so ztest20920.o
+Building shared library libz.so.1.2.11 with /media/kwierman/KJWPassport/products/gcc/v4_9_3a/Linux64bit+4.4-2.23/bin/gcc.
+
+=== ztest20920.c ===
+#include <stdio.h>
+#include <stdlib.h>
+size_t dummy = 0;
+===
+/media/kwierman/KJWPassport/products/gcc/v4_9_3a/Linux64bit+4.4-2.23/bin/gcc -c -O3 ztest20920.c
+Checking for size_t... Yes.
+
+
+=== ztest20920.c ===
+#include <sys/types.h>
+off64_t dummy = 0;
+===
+/media/kwierman/KJWPassport/products/gcc/v4_9_3a/Linux64bit+4.4-2.23/bin/gcc -c -O3 -D_LARGEFILE64_SOURCE=1 ztest20920.c
+Checking for off64_t... Yes.
+Checking for fseeko... Yes.
+
+=== ztest20920.c ===
+#include <string.h>
+#include <errno.h>
+int main() { return strlen(strerror(errno)); }
+===
+/media/kwierman/KJWPassport/products/gcc/v4_9_3a/Linux64bit+4.4-2.23/bin/gcc -O3 -D_LARGEFILE64_SOURCE=1 -o ztest20920 ztest20920.c
+Checking for strerror... Yes.
+
+=== ztest20920.c ===
+#include <unistd.h>
+int main() { return 0; }
+===
+/media/kwierman/KJWPassport/products/gcc/v4_9_3a/Linux64bit+4.4-2.23/bin/gcc -c -O3 -D_LARGEFILE64_SOURCE=1 ztest20920.c
+Checking for unistd.h... Yes.
+
+=== ztest20920.c ===
+#include <stdarg.h>
+int main() { return 0; }
+===
+/media/kwierman/KJWPassport/products/gcc/v4_9_3a/Linux64bit+4.4-2.23/bin/gcc -c -O3 -D_LARGEFILE64_SOURCE=1 ztest20920.c
+Checking for stdarg.h... Yes.
+
+=== ztest20920.c ===
+#include <stdio.h>
+#include <stdarg.h>
+#include "zconf.h"
+int main()
+{
+#ifndef STDC
+  choke me
+#endif
+  return 0;
+}
+===
+/media/kwierman/KJWPassport/products/gcc/v4_9_3a/Linux64bit+4.4-2.23/bin/gcc -c -O3 -D_LARGEFILE64_SOURCE=1 ztest20920.c
+Checking whether to use vs[n]printf() or s[n]printf()... using vs[n]printf().
+
+=== ztest20920.c ===
+#include <stdio.h>
+#include <stdarg.h>
+int mytest(const char *fmt, ...)
+{
+  char buf[20];
+  va_list ap;
+  va_start(ap, fmt);
+  vsnprintf(buf, sizeof(buf), fmt, ap);
+  va_end(ap);
+  return 0;
+}
+int main()
+{
+  return (mytest("Hello%d\n", 1));
+}
+===
+/media/kwierman/KJWPassport/products/gcc/v4_9_3a/Linux64bit+4.4-2.23/bin/gcc -O3 -D_LARGEFILE64_SOURCE=1 -o ztest20920 ztest20920.c
+Checking for vsnprintf() in stdio.h... Yes.
+
+=== ztest20920.c ===
+#include <stdio.h>
+#include <stdarg.h>
+int mytest(const char *fmt, ...)
+{
+  int n;
+  char buf[20];
+  va_list ap;
+  va_start(ap, fmt);
+  n = vsnprintf(buf, sizeof(buf), fmt, ap);
+  va_end(ap);
+  return n;
+}
+int main()
+{
+  return (mytest("Hello%d\n", 1));
+}
+===
+/media/kwierman/KJWPassport/products/gcc/v4_9_3a/Linux64bit+4.4-2.23/bin/gcc -c -O3 -D_LARGEFILE64_SOURCE=1 ztest20920.c
+Checking for return value of vsnprintf()... Yes.
+
+=== ztest20920.c ===
+#define ZLIB_INTERNAL __attribute__((visibility ("hidden")))
+int ZLIB_INTERNAL foo;
+int main()
+{
+  return 0;
+}
+===
+/media/kwierman/KJWPassport/products/gcc/v4_9_3a/Linux64bit+4.4-2.23/bin/gcc -c -O3 -D_LARGEFILE64_SOURCE=1 ztest20920.c
+Checking for attribute(visibility) support... Yes.
+
+ALL = static shared all64
+AR = ar
+ARFLAGS = rc
+CC = /media/kwierman/KJWPassport/products/gcc/v4_9_3a/Linux64bit+4.4-2.23/bin/gcc
+CFLAGS = -O3 -D_LARGEFILE64_SOURCE=1 -DHAVE_HIDDEN
+CPP = /media/kwierman/KJWPassport/products/gcc/v4_9_3a/Linux64bit+4.4-2.23/bin/gcc -E
+EXE =
+LDCONFIG = ldconfig
+LDFLAGS =
+LDSHARED = /media/kwierman/KJWPassport/products/gcc/v4_9_3a/Linux64bit+4.4-2.23/bin/gcc -shared -Wl,-soname,libz.so.1,--version-script,zlib.map
+LDSHAREDLIBC = -lc
+OBJC = $(OBJZ) $(OBJG)
+PIC_OBJC = $(PIC_OBJZ) $(PIC_OBJG)
+RANLIB = ranlib
+SFLAGS = -O3 -fPIC -D_LARGEFILE64_SOURCE=1 -DHAVE_HIDDEN
+SHAREDLIB = libz.so
+SHAREDLIBM = libz.so.1
+SHAREDLIBV = libz.so.1.2.11
+STATICLIB = libz.a
+TEST = all teststatic testshared test64
+VER = 1.2.11
+Z_U4 =
+SRCDIR =
+exec_prefix = ${prefix}
+includedir = ${prefix}/include
+libdir = ${exec_prefix}/lib
+mandir = ${prefix}/share/man
+prefix = /media/kwierman/KJWPassport/newhdf5/localProducts_kevlar_v01_00_00_e10_debug/zlib/v01_02_11/u16.x86_64.e10.debug/
+sharedlibdir = ${libdir}
+uname = Linux
+--------------------
+
+
+--------------------
+./configure --prefix=/media/kwierman/KJWPassport/newhdf5/localProducts_kevlar_v01_00_00_e10_debug/zlib/v01_02_11/u16.x86_64.e10.debug/
+Tue Mar 21 18:53:05 CDT 2017
+=== ztest31757.c ===
+extern int getchar();
+int hello() {return getchar();}
+===
+/media/kwierman/KJWPassport/products/gcc/v4_9_3a/Linux64bit+4.4-2.23/bin/gcc -c ztest31757.c
+... using gcc
+
+Checking for obsessive-compulsive compiler options...
+=== ztest31757.c ===
+int foo() { return 0; }
+===
+/media/kwierman/KJWPassport/products/gcc/v4_9_3a/Linux64bit+4.4-2.23/bin/gcc -c -O3 ztest31757.c
+
+Checking for shared library support...
+=== ztest31757.c ===
+extern int getchar();
+int hello() {return getchar();}
+===
+/media/kwierman/KJWPassport/products/gcc/v4_9_3a/Linux64bit+4.4-2.23/bin/gcc -w -c -O3 -fPIC ztest31757.c
+/media/kwierman/KJWPassport/products/gcc/v4_9_3a/Linux64bit+4.4-2.23/bin/gcc -shared -Wl,-soname,libz.so.1,--version-script,zlib.map -O3 -fPIC -o ztest31757.so ztest31757.o
+Building shared library libz.so.1.2.11 with /media/kwierman/KJWPassport/products/gcc/v4_9_3a/Linux64bit+4.4-2.23/bin/gcc.
+
+=== ztest31757.c ===
+#include <stdio.h>
+#include <stdlib.h>
+size_t dummy = 0;
+===
+/media/kwierman/KJWPassport/products/gcc/v4_9_3a/Linux64bit+4.4-2.23/bin/gcc -c -O3 ztest31757.c
+Checking for size_t... Yes.
+
+
+=== ztest31757.c ===
+#include <sys/types.h>
+off64_t dummy = 0;
+===
+/media/kwierman/KJWPassport/products/gcc/v4_9_3a/Linux64bit+4.4-2.23/bin/gcc -c -O3 -D_LARGEFILE64_SOURCE=1 ztest31757.c
+Checking for off64_t... Yes.
+Checking for fseeko... Yes.
+
+=== ztest31757.c ===
+#include <string.h>
+#include <errno.h>
+int main() { return strlen(strerror(errno)); }
+===
+/media/kwierman/KJWPassport/products/gcc/v4_9_3a/Linux64bit+4.4-2.23/bin/gcc -O3 -D_LARGEFILE64_SOURCE=1 -o ztest31757 ztest31757.c
+Checking for strerror... Yes.
+
+=== ztest31757.c ===
+#include <unistd.h>
+int main() { return 0; }
+===
+/media/kwierman/KJWPassport/products/gcc/v4_9_3a/Linux64bit+4.4-2.23/bin/gcc -c -O3 -D_LARGEFILE64_SOURCE=1 ztest31757.c
+Checking for unistd.h... Yes.
+
+=== ztest31757.c ===
+#include <stdarg.h>
+int main() { return 0; }
+===
+/media/kwierman/KJWPassport/products/gcc/v4_9_3a/Linux64bit+4.4-2.23/bin/gcc -c -O3 -D_LARGEFILE64_SOURCE=1 ztest31757.c
+Checking for stdarg.h... Yes.
+
+=== ztest31757.c ===
+#include <stdio.h>
+#include <stdarg.h>
+#include "zconf.h"
+int main()
+{
+#ifndef STDC
+  choke me
+#endif
+  return 0;
+}
+===
+/media/kwierman/KJWPassport/products/gcc/v4_9_3a/Linux64bit+4.4-2.23/bin/gcc -c -O3 -D_LARGEFILE64_SOURCE=1 ztest31757.c
+Checking whether to use vs[n]printf() or s[n]printf()... using vs[n]printf().
+
+=== ztest31757.c ===
+#include <stdio.h>
+#include <stdarg.h>
+int mytest(const char *fmt, ...)
+{
+  char buf[20];
+  va_list ap;
+  va_start(ap, fmt);
+  vsnprintf(buf, sizeof(buf), fmt, ap);
+  va_end(ap);
+  return 0;
+}
+int main()
+{
+  return (mytest("Hello%d\n", 1));
+}
+===
+/media/kwierman/KJWPassport/products/gcc/v4_9_3a/Linux64bit+4.4-2.23/bin/gcc -O3 -D_LARGEFILE64_SOURCE=1 -o ztest31757 ztest31757.c
+Checking for vsnprintf() in stdio.h... Yes.
+
+=== ztest31757.c ===
+#include <stdio.h>
+#include <stdarg.h>
+int mytest(const char *fmt, ...)
+{
+  int n;
+  char buf[20];
+  va_list ap;
+  va_start(ap, fmt);
+  n = vsnprintf(buf, sizeof(buf), fmt, ap);
+  va_end(ap);
+  return n;
+}
+int main()
+{
+  return (mytest("Hello%d\n", 1));
+}
+===
+/media/kwierman/KJWPassport/products/gcc/v4_9_3a/Linux64bit+4.4-2.23/bin/gcc -c -O3 -D_LARGEFILE64_SOURCE=1 ztest31757.c
+Checking for return value of vsnprintf()... Yes.
+
+=== ztest31757.c ===
+#define ZLIB_INTERNAL __attribute__((visibility ("hidden")))
+int ZLIB_INTERNAL foo;
+int main()
+{
+  return 0;
+}
+===
+/media/kwierman/KJWPassport/products/gcc/v4_9_3a/Linux64bit+4.4-2.23/bin/gcc -c -O3 -D_LARGEFILE64_SOURCE=1 ztest31757.c
+Checking for attribute(visibility) support... Yes.
+
+ALL = static shared all64
+AR = ar
+ARFLAGS = rc
+CC = /media/kwierman/KJWPassport/products/gcc/v4_9_3a/Linux64bit+4.4-2.23/bin/gcc
+CFLAGS = -O3 -D_LARGEFILE64_SOURCE=1 -DHAVE_HIDDEN
+CPP = /media/kwierman/KJWPassport/products/gcc/v4_9_3a/Linux64bit+4.4-2.23/bin/gcc -E
+EXE =
+LDCONFIG = ldconfig
+LDFLAGS =
+LDSHARED = /media/kwierman/KJWPassport/products/gcc/v4_9_3a/Linux64bit+4.4-2.23/bin/gcc -shared -Wl,-soname,libz.so.1,--version-script,zlib.map
+LDSHAREDLIBC = -lc
+OBJC = $(OBJZ) $(OBJG)
+PIC_OBJC = $(PIC_OBJZ) $(PIC_OBJG)
+RANLIB = ranlib
+SFLAGS = -O3 -fPIC -D_LARGEFILE64_SOURCE=1 -DHAVE_HIDDEN
+SHAREDLIB = libz.so
+SHAREDLIBM = libz.so.1
+SHAREDLIBV = libz.so.1.2.11
+STATICLIB = libz.a
+TEST = all teststatic testshared test64
+VER = 1.2.11
+Z_U4 =
+SRCDIR =
+exec_prefix = ${prefix}
+includedir = ${prefix}/include
+libdir = ${exec_prefix}/lib
+mandir = ${prefix}/share/man
+prefix = /media/kwierman/KJWPassport/newhdf5/localProducts_kevlar_v01_00_00_e10_debug/zlib/v01_02_11/u16.x86_64.e10.debug/
+sharedlibdir = ${libdir}
+uname = Linux
+--------------------
+
+
+--------------------
+./configure --prefix=/media/kwierman/KJWPassport/newhdf5/localProducts_kevlar_v01_00_00_e10_debug/zlib/v01_02_11/u16.x86_64.e10.debug/
+Tue Mar 21 18:55:53 CDT 2017
+=== ztest3559.c ===
+extern int getchar();
+int hello() {return getchar();}
+===
+gcc -c ztest3559.c
+... using gcc
+
+Checking for obsessive-compulsive compiler options...
+=== ztest3559.c ===
+int foo() { return 0; }
+===
+gcc -c -O3 ztest3559.c
+
+Checking for shared library support...
+=== ztest3559.c ===
+extern int getchar();
+int hello() {return getchar();}
+===
+gcc -w -c -O3 -fPIC ztest3559.c
+gcc -shared -Wl,-soname,libz.so.1,--version-script,zlib.map -O3 -fPIC -o ztest3559.so ztest3559.o
+collect2: error: /usr/bin/nm terminated with signal 2 [Interrupt]
