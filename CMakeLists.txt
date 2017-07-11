@@ -1,19 +1,3 @@
-# ======================================================================
-#  zlib main build file
-#
-#  cd .../path/to/build/directory
-#  source .../path/to/zlib/ups/setup_for_development <-d|-p>
-#  cmake [-DCMAKE_INSTALL_PREFIX=/install/path]
-#        -DCMAKE_BUILD_TYPE=$CETPKG_TYPE
-#        $CETPKG_SOURCE
-#  make
-#  make test
-#  make install
-#  make package (builds distribution tarfile)
-# ======================================================================
-
-
-# use cmake 2.8 or later
 cmake_minimum_required (VERSION 2.8)
 
 project(zlib)
@@ -39,19 +23,22 @@ cet_set_compiler_flags(DIAGS CAUTIOUS
 
 cet_report_compiler_flags()
 
-# these are minimum required versions, not the actual product versions
 find_ups_product( cetbuildtools v4_14_01 )
 
-# macros for dictionary and simple_plugin
-# ADD SOURCE CODE SUBDIRECTORIES HERE
+#set (ZLIB_EXPORTED_TARGETS "zlib-targets")
 add_subdirectory(zlib)
+cet_add_to_library_list( zlib )
+cet_add_to_library_list( zlibstatic )
 
-
+#install(EXPORT zlib zlibstatic DESTINATION lib/zlib)
 # tests
 add_subdirectory(test)
 
 # ups - table and config files
 add_subdirectory(ups)
 
+
+
 # packaging utility
 include(UseCPack)
+

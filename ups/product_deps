@@ -4,26 +4,27 @@ parent zlib v01_02_11
 defaultqual e14
  
 #
-incdir	fq_dir	include
-libdir	fq_dir		lib
-bindir	fq_dir		bin
+incdir  fq_dir  include
+libdir  fq_dir    lib
+bindir  fq_dir    bin
 flcdir  fq_dir    fcl
 
 # With "product  version" table below, we now define depdendencies
 # Add the dependent product and version
 
 product          version
-gcc		v6_3_0
+zlib v01_02_11
+gcc    v6_3_0
 cetbuildtools   v5_09_01       -       only_for_build
 end_product_list
 
 # We now define allowed qualifiers and the corresponding qualifiers for the depdencies.
 # Make a table by adding columns before "notes". 
-qualifier	gcc	notes
-e10:debug	-nq-
+qualifier  gcc  notes
+e10:debug  -nq-
 e10:opt   -nq-
 e10:prof  -nq-
-e14:debug	-nq-
+e14:debug  -nq-
 e14:opt   -nq-
 e14:prof  -nq-
 end_qualifier_list
